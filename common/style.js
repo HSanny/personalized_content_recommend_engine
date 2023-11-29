@@ -23,5 +23,11 @@ Spacings.loadSpacings({
   page: 20,
   card: 12,
   gridGutter: 16 ,
-  page: isSmallScreen ? 16 : 20,
+  // page: isSmallScreen ? 16 : 20,
+  loginForm: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffc2c2',
+  },
 });
