@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useAppSelector } from './app/hooks';
+import { RootState } from './app/store';
+import WelcomeScreen from './components/WelcomeScreen';
+import { themes } from './style/theme';
 
-function App() {
+const App: React.FC = () => {
+  const currTheme = useAppSelector((state: RootState) => state.theme.currTheme);
+
+  const currentTheme = themes[currTheme] || themes['default']
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={currentTheme}>
+      <WelcomeScreen />
     </div>
   );
-}
+};
 
 export default App;
