@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'react-native-ui-lib';
-import { Card } from 'react-native-ui-lib/card';
-import './common/style';
+import Login from './component/login';
 
 export default function HomeScreen() {
 
@@ -16,9 +15,7 @@ export default function HomeScreen() {
 
     return (
         <View flex backgroundColor='#5760a6'>
-            <Card>
-
-            </Card>
+            <Login />
         </View>
     )
 }
